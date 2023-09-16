@@ -39,20 +39,29 @@ async function main() {
     // console.log(articles)
 
     // Create User and Article and associate with them
-    const user = await prisma.user.create({
-        data: {
-            name: 'Sara',
-            email: 'sara@test.com',
-            aritcles: {
-                create: {
-                    title: 'Sara article title',
-                    body: 'Sara article body'
-                }
-            }
+    // const user = await prisma.user.create({
+    //     data: {
+    //         name: 'Sara',
+    //         email: 'sara@test.com',
+    //         aritcles: {
+    //             create: {
+    //                 title: 'Sara article title',
+    //                 body: 'Sara article body'
+    //             }
+    //         }
+    //     }
+    // })
+
+    // console.log(user)
+
+    // List of users with their articles
+    const usersWithArticles = await prisma.user.findMany({
+        include: {
+            articles: true
         }
     })
 
-    console.log(user)
+    console.log(usersWithArticles)
 }
 
 main()
