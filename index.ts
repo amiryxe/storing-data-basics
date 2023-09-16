@@ -55,13 +55,22 @@ async function main() {
     // console.log(user)
 
     // List of users with their articles
-    const usersWithArticles = await prisma.user.findMany({
-        include: {
-            articles: true
+    // const usersWithArticles = await prisma.user.findMany({
+    //     include: {
+    //         articles: true
+    //     }
+    // })
+
+    // console.log(usersWithArticles)
+
+    // List of articles of specific user
+    const articlesOfSara = await prisma.article.findMany({
+        where: {
+            authorId: 3
         }
     })
 
-    console.log(usersWithArticles)
+    console.log(articlesOfSara)
 }
 
 main()
