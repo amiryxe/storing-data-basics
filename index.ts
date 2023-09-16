@@ -64,13 +64,34 @@ async function main() {
     // console.log(usersWithArticles)
 
     // List of articles of specific user
-    const articlesOfSara = await prisma.article.findMany({
-        where: {
-            authorId: 3
-        }
-    })
+    // const articlesOfSara = await prisma.article.findMany({
+    //     where: {
+    //         authorId: 3
+    //     }
+    // })
 
-    console.log(articlesOfSara)
+    // console.log(articlesOfSara)
+
+    // Update a user
+    // const user = await prisma.user.update({
+    //     where: {
+    //         id: 1
+    //     },
+    //     data: {
+    //         name: 'Amir Sa'
+    //     }
+    // })
+
+    // console.log(user)
+
+    // Delete a user
+    // const user = await prisma.user.delete({
+    //     where: {
+    //         id: 2
+    //     },
+    // })
+
+    // console.log(user)
 }
 
 main()
